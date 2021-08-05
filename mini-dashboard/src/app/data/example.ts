@@ -1,4 +1,4 @@
-{
+export const exampleData = {
   "data": [
     {
       "id": "1",
