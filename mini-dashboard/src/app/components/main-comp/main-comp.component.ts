@@ -13,7 +13,7 @@ export class MainCompComponent implements OnInit {
   ngOnInit(): void {
   }
   proceed() {
-    this.router.navigate(['home'], { relativeTo: this.route })
+    this.router.navigate(['home/books'], { relativeTo: this.route })
   }
 
 }

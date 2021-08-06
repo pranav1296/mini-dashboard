@@ -12,6 +12,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CustomTextComponent } from './components/home/custom-text/custom-text.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MainCompComponent,
     NavbarComponent,
     BooksComponent,
+    CustomTextComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatTableModule,
+    FormsModule,
     MatSortModule,
     MatInputModule,
     MatFormFieldModule
