@@ -1,7 +1,12 @@
 <div class="navbar">
-  <div>
-    <ul>
-      <li routerLinkActive="active"><a [routerLink]="['books']">Books</a></li>
-    </ul>
+  <div class="list-items">
+    <div routerLinkActive="active" class="list-item">
+      <i class="material-icons">bookmark_border</i>
+      <div [routerLink]="['books']">Books</div>
+    </div>
+    <div routerLinkActive="active" class="list-item">
+      <i class="material-icons">bookmark_border</i>
+      <div [routerLink]="['text']">Text</div>
+    </div>
   </div>
 </div>

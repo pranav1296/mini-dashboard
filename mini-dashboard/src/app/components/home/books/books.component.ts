@@ -6,7 +6,8 @@ import { MatSort } from '@angular/material/sort';
 export interface IBooks {
   id: string,
   name: string,
-  type: string
+  type: string,
+  date: string
 }
 @Component({
   selector: 'app-books',
@@ -17,7 +18,7 @@ export class BooksComponent implements OnInit {
   tableContent: any;
   dataSource: MatTableDataSource<IBooks>;
   books: IBooks[];
-  columns: string[] = ['id', 'name', 'type'];
+  columns: string[] = ['id', 'name', 'type', 'date'];
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor() {
     this.books = this.getBooks();
@@ -28,12 +29,14 @@ export class BooksComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   getBooks() {
+    console.log(exampleData);
     const books: IBooks[] = []
     for (let ele of exampleData.data) {
-      let book = { id: '', name: '', type: '' };
+      let book = { id: '', name: '', type: '', date: '' };
       book.id = ele.id;
       book.name = ele.attributes.content;
       book.type = ele.attributes.display_properties.type;
+      book.date = ele.attributes.created_at;
       books.push(book);
     }
     return books;

@@ -1,9 +1,13 @@
 <h1>Table</h1>
-<mat-form-field>
-  <mat-label>Filter </mat-label>
-  <input matInput placeholder="Eg: First Book" (keyup)="applyFilter($event)" />
+<mat-form-field appearnce="fill">
+  <mat-label>Filter</mat-label>
+  <input
+    matInput
+    (keyup)="applyFilter($event)"
+    placeholder="Eg: Famous Book.."
+  />
 </mat-form-field>
-<div style="flex-grow: 1">
+<div>
   <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
@@ -16,6 +20,10 @@
     <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
       <td mat-cell *matCellDef="let row">{{ row.type }}</td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Created</th>
+      <td mat-cell *matCellDef="let row">{{ row.date }}</td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="columns"></tr>
     <tr mat-row *matRowDef="let row; columns: columns"></tr>
